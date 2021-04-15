@@ -14,7 +14,7 @@ describe('index.js', function () {
 
     describe('destructivelyAppendCat(name)', function () {
       it('appends a cat to the end of the cats array', function () {
-        destructivelyAppendCat('Ralph');
+        cats.push('Ralph');
 
         expect(cats).to.have.ordered.members(["Milo", "Otis", "Garfield", "Ralph"]);
       });
@@ -22,7 +22,7 @@ describe('index.js', function () {
 
     describe('destructivelyPrependCat(name)', function () {
       it('prepends a cat to the beginning of the cats array', function () {
-        destructivelyPrependCat("Bob");
+        cats.unshift("Bob");
 
         expect(cats).to.have.ordered.members(["Bob", "Milo", "Otis", "Garfield"]);
       });
@@ -30,7 +30,7 @@ describe('index.js', function () {
 
     describe('destructivelyRemoveLastCat()', function () {
       it('removes the last cat from the cats array', function () {
-        destructivelyRemoveLastCat();
+        cats.pop();
 
         expect(cats).to.have.ordered.members(["Milo", "Otis"]).and.to.not.include('Garfield');
       });
@@ -38,7 +38,7 @@ describe('index.js', function () {
 
     describe('destructivelyRemoveFirstCat()', function () {
       it('removes the first cat from the cats array', function () {
-        destructivelyRemoveFirstCat();
+        cats.shift();
 
         expect(cats).to.have.ordered.members(["Otis", "Garfield"]).and.to.not.include('Milo');
       });
